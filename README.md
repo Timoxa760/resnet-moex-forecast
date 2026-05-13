@@ -1,2 +1,26 @@
-# resnet-moex-forecast
-ResNet for Russian stock price forecasting (SBER, GAZP, YNDX) - coursework
+# ResNet для прогнозирования динамики акций MOEX
+
+Курсовая работа: остаточные нейронные сети для прогнозирования финансовой динамики.
+
+## Структура
+
+- `config.py` — гиперпараметры и конфигурация эксперимента.
+- `data.py` — загрузка котировок с MOEX, расчёт технических индикаторов, формирование датасета.
+- `model.py` — архитектура 1D ResNet с skip-соединениями.
+- `train.py` — цикл обучения с ранней остановкой и планировщиком learning rate.
+- `evaluate.py` — метрики (accuracy, F1, ROC-AUC) и визуализация.
+- `main.py` — конвейер запуска эксперимента.
+
+## Установка
+
+```bash
+pip install -r requirements.txt
+```
+
+## Запуск
+
+```bash
+python main.py
+```
+
+Результаты (графики и веса моделей) сохраняются в директорию `results/`.
